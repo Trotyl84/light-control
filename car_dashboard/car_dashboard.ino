@@ -61,7 +61,7 @@ void loop() {
         // file found at server
         if (httpCode == HTTP_CODE_OK || httpCode == HTTP_CODE_MOVED_PERMANENTLY) {
           String payload = http.getString();
-          //Serial.println(payload);
+          Serial.println("[HTTP] GET... has been handled " );
         }
       } else {
         Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
