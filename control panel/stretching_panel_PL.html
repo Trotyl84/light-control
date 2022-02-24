@@ -1,0 +1,34 @@
+<head>
+	<link rel="stylesheet" href="bin/style.css" type="text/css" />
+	
+	
+	<script src="http://192.168.4.1/status.js"></script>
+	
+	<script>
+	
+	function preLoad() {	
+		if (light_status== 0){
+			document.getElementById('myImg').src='bin/off.png';
+			document.getElementById("1").checked = true;
+		} 
+		if (light_status== 1){
+			document.getElementById('myImg').src='bin/on.png';
+			document.getElementById("0").checked = true;
+		}
+	}
+	</script>
+	
+</head>    
+
+<body onLoad="preLoad()">
+	<form autocomplete="off" action="http://192.168.4.1/send.html">
+		<br>
+		<input type="radio" id="0" name="1"  value="OFF"> <label for="1"> Wyłącz </label>
+		<input type="radio" id="1" name="1"  value="ON" > <label for="2"> Włącz  </label>
+		<input type="submit" value="Wyślij">
+	</form>
+		<br>
+		<img id="myImg"  width="802" height="602" alt="car image" >
+		<br>
+		<br>
+</body>
